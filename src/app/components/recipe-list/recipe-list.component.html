@@ -44,6 +44,12 @@
             </svg>
             <span>{{ recipe.cookingTime }} minuter</span>
           </div>
+          <a
+            [routerLink]="['/recipe', recipe.id]"
+            class="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition"
+          >
+            Visa recept
+          </a>
         </div>
       </div>
     </div>

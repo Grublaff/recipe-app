@@ -70,5 +70,10 @@
         </div>
       </div>
     </div>
+
+    <!-- Fallback Message -->
+    <div *ngIf="!loading && !error && !recipe" class="text-center py-8">
+      <p class="text-gray-600">Inget recept hittades.</p>
+    </div>
   </div>
 </div>

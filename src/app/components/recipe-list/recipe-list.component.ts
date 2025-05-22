@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { RecipeService } from '../../services/recipe.service';
 import { Recipe } from '../../models/recipe.model';
 import { CommonModule } from '@angular/common';
@@ -10,7 +10,7 @@ import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
   standalone: true,
-  imports: [CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, RouterModule ]
 })
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [];

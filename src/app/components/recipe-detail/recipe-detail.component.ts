@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { RecipeService } from '../../services/recipe.service';
 import { Recipe } from '../../models/recipe.model';
 
@@ -8,7 +8,7 @@ import { Recipe } from '../../models/recipe.model';
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, RouterModule]
 })
 export class RecipeDetailComponent implements OnInit {
   recipe: Recipe | null = null;
@@ -36,6 +36,7 @@ export class RecipeDetailComponent implements OnInit {
       next: (recipe) => {
         this.recipe = recipe;
         this.loading = false;
+        console.log('Recipe loaded successfully:', recipe);
       },
       error: (error) => {
         this.error = `Failed to load recipe: ${error.message}. Please try again later.`;

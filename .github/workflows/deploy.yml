@@ -44,6 +44,12 @@ jobs:
       - name: Create .nojekyll file
         run: touch dist/recipe-app/.nojekyll
 
+      - name: Extract browser folder contents to root
+        run: |
+          cd dist/recipe-app
+          mv browser/* .
+          rm -rf browser
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

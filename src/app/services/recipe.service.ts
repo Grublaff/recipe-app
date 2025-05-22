@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, map, catchError, throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { Recipe } from '../models/recipe.model';
 
 @Injectable({
@@ -11,17 +12,10 @@ export class RecipeService {
 
   constructor(private http: HttpClient) { }
 
-  private handleError(error: HttpErrorResponse) {
-    console.error('An error occurred:', error);
-    return throwError(() => new Error(error.message || 'An error occurred while fetching recipes'));
-  }
-
   getRecipes(): Observable<Recipe[]> {
-    return this.http.get<{ recipes: Recipe[] }>(this.recipesUrl)
-      .pipe(
-        map(data => data.recipes),
-        catchError(this.handleError)
-      );
+    return this.http.get<Recipe[]>(this.recipesUrl).pipe(
+      catchError(this.handleError<Recipe[]>('getRecipes', []))
+    );
   }
 
   getRecipeById(id: number): Observable<Recipe> {
@@ -33,24 +27,26 @@ export class RecipeService {
         }
         return recipe;
       }),
-      catchError(this.handleError)
+      catchError(this.handleError<Recipe>('getRecipeById'))
     );
   }
 
   searchRecipes(query: string): Observable<Recipe[]> {
+    if (!query.trim()) {
+      return this.getRecipes();
+    }
     return this.getRecipes().pipe(
-      map(recipes => {
-        if (!query) return recipes;
-        const searchTerm = query.toLowerCase();
-        return recipes.filter(recipe => 
-          recipe.title.toLowerCase().includes(searchTerm) ||
-          recipe.description.toLowerCase().includes(searchTerm) ||
-          recipe.ingredients.some(ingredient => 
-            ingredient.toLowerCase().includes(searchTerm)
-          )
-        );
-      }),
-      catchError(this.handleError)
+      map(recipes => recipes.filter(recipe =>
+        recipe.name.toLowerCase().includes(query.toLowerCase()) ||
+        recipe.description.toLowerCase().includes(query.toLowerCase())
+      ))
     );
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(`${operation} failed:`, error);
+      throw new Error('Kunde inte ladda recept. Försök igen senare.');
+    };
   }
 }

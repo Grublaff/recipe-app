@@ -2,51 +2,79 @@
   "recipes": [
     {
       "id": 1,
-      "title": "Classic Chocolate Cake",
-      "description": "A rich and moist chocolate cake perfect for any occasion",
+      "name": "Klassisk Chokladkaka",
+      "description": "En rik och fuktig chokladkaka som är perfekt för alla tillfällen.",
+      "cookingTime": 60,
       "ingredients": [
-        "2 cups all-purpose flour",
-        "2 cups sugar",
-        "3/4 cup unsweetened cocoa powder",
-        "2 teaspoons baking powder",
-        "1 1/2 teaspoons baking soda",
-        "1 teaspoon salt",
-        "1 cup milk",
-        "1/2 cup vegetable oil",
-        "2 eggs",
-        "2 teaspoons vanilla extract",
-        "1 cup boiling water"
+        "200g mörk choklad",
+        "200g smör",
+        "4 ägg",
+        "200g strösocker",
+        "100g vetemjöl",
+        "1 tsk vaniljsocker",
+        "1 nypa salt"
       ],
       "instructions": [
-        "Preheat oven to 350°F (175°C)",
-        "Mix dry ingredients together",
-        "Add wet ingredients and mix well",
-        "Pour into greased pan",
-        "Bake for 30-35 minutes"
+        "Värm ugnen till 175°C",
+        "Smält choklad och smör i en kastrull",
+        "Vispa ägg och socker till en pösig massa",
+        "Rör ner den smälta chokladen",
+        "Blanda ner mjöl, vaniljsocker och salt",
+        "Häll smeten i en smord form",
+        "Grädda i 30-35 minuter"
       ],
-      "cookingTime": "45 minutes",
-      "difficulty": "Medium"
+      "imageUrl": "assets/images/chocolate-cake.jpg"
     },
     {
       "id": 2,
-      "title": "Vegetable Stir Fry",
-      "description": "Quick and healthy vegetable stir fry with a savory sauce",
+      "name": "Köttbullar med Potatismos",
+      "description": "Traditionella svenska köttbullar serverade med krämigt potatismos och lingonsylt.",
+      "cookingTime": 45,
       "ingredients": [
-        "2 cups mixed vegetables",
-        "2 tablespoons soy sauce",
-        "1 tablespoon vegetable oil",
-        "2 cloves garlic",
-        "1 teaspoon ginger",
-        "1 tablespoon cornstarch"
+        "500g blandfärs",
+        "1 gul lök",
+        "1 ägg",
+        "2 msk ströbröd",
+        "2 dl mjölk",
+        "1 tsk salt",
+        "1 krm svartpeppar",
+        "1 kg potatis",
+        "2 dl mjölk",
+        "50g smör"
       ],
       "instructions": [
-        "Heat oil in a large pan",
-        "Add garlic and ginger",
-        "Stir fry vegetables",
-        "Add sauce and thicken with cornstarch"
+        "Blanda färs med finhackad lök, ägg, ströbröd och kryddor",
+        "Forma köttbullar",
+        "Stek köttbullarna gyllenbruna",
+        "Koka potatis",
+        "Mosa potatisen med mjölk och smör",
+        "Servera med lingonsylt"
       ],
-      "cookingTime": "20 minutes",
-      "difficulty": "Easy"
+      "imageUrl": "assets/images/meatballs.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Äppelpaj",
+      "description": "En klassisk svensk äppelpaj med krispigt smuldeg och söta äpplen.",
+      "cookingTime": 50,
+      "ingredients": [
+        "1 kg äpplen",
+        "2 dl strösocker",
+        "2 tsk kanel",
+        "200g smör",
+        "3 dl vetemjöl",
+        "1 dl strösocker",
+        "1 ägg"
+      ],
+      "instructions": [
+        "Skala och skiva äpplena",
+        "Blanda äpplena med socker och kanel",
+        "Gör smuldeg av smör, mjöl och socker",
+        "Lägg äpplena i en pajform",
+        "Fördela smuldegen över äpplena",
+        "Grädda i 175°C i 30-35 minuter"
+      ],
+      "imageUrl": "assets/images/apple-pie.jpg"
     }
   ]
 } 

@@ -44,9 +44,24 @@ export class RecipeListComponent implements OnInit {
     });
   }
 
-  onSearch(event: Event): void {
-    const query = (event.target as HTMLInputElement).value;
-    this.searchSubject.next(query);
+  onSearch(): void {
+    if (!this.searchQuery.trim()) {
+      this.loadRecipes();
+      return;
+    }
+
+    this.loading = true;
+    this.error = null;
+    this.recipeService.searchRecipes(this.searchQuery).subscribe({
+      next: (recipes) => {
+        this.recipes = recipes;
+        this.loading = false;
+      },
+      error: (error) => {
+        this.error = error.message;
+        this.loading = false;
+      }
+    });
   }
 
   viewRecipe(recipeId: number): void {

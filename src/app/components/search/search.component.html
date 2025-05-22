@@ -1,0 +1,18 @@
+<div class="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-8">
+  <h1 class="text-4xl font-bold text-gray-800 mb-8 text-center">Find Your Perfect Recipe</h1>
+  <div class="w-full max-w-2xl flex gap-4">
+    <input 
+      type="text" 
+      [(ngModel)]="searchQuery" 
+      placeholder="Search for recipes..."
+      (keyup.enter)="onSearch()"
+      class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-lg"
+    >
+    <button 
+      (click)="onSearch()"
+      class="px-8 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-lg font-medium"
+    >
+      Search
+    </button>
+  </div>
+</div>

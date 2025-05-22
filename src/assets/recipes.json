@@ -1,0 +1,52 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Classic Chocolate Cake",
+      "description": "A rich and moist chocolate cake perfect for any occasion",
+      "ingredients": [
+        "2 cups all-purpose flour",
+        "2 cups sugar",
+        "3/4 cup unsweetened cocoa powder",
+        "2 teaspoons baking powder",
+        "1 1/2 teaspoons baking soda",
+        "1 teaspoon salt",
+        "1 cup milk",
+        "1/2 cup vegetable oil",
+        "2 eggs",
+        "2 teaspoons vanilla extract",
+        "1 cup boiling water"
+      ],
+      "instructions": [
+        "Preheat oven to 350°F (175°C)",
+        "Mix dry ingredients together",
+        "Add wet ingredients and mix well",
+        "Pour into greased pan",
+        "Bake for 30-35 minutes"
+      ],
+      "cookingTime": "45 minutes",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 2,
+      "title": "Vegetable Stir Fry",
+      "description": "Quick and healthy vegetable stir fry with a savory sauce",
+      "ingredients": [
+        "2 cups mixed vegetables",
+        "2 tablespoons soy sauce",
+        "1 tablespoon vegetable oil",
+        "2 cloves garlic",
+        "1 teaspoon ginger",
+        "1 tablespoon cornstarch"
+      ],
+      "instructions": [
+        "Heat oil in a large pan",
+        "Add garlic and ginger",
+        "Stir fry vegetables",
+        "Add sauce and thicken with cornstarch"
+      ],
+      "cookingTime": "20 minutes",
+      "difficulty": "Easy"
+    }
+  ]
+} 

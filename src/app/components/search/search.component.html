@@ -1,6 +1,8 @@
 <div class="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-8">
   <h1 class="text-4xl font-bold text-gray-800 mb-8 text-center">Find Your Perfect Recipe</h1>
-  <div class="w-full max-w-2xl flex gap-4">
+  
+  <!-- Search Bar -->
+  <div class="w-full max-w-2xl flex gap-4 mb-6">
     <input 
       type="text" 
       [(ngModel)]="searchQuery" 
@@ -13,6 +15,20 @@
       class="px-8 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-lg font-medium"
     >
       Search
+    </button>
+  </div>
+
+  <!-- Category Filters -->
+  <div class="w-full max-w-2xl flex flex-wrap justify-center gap-3">
+    <button 
+      *ngFor="let category of categories"
+      (click)="onCategorySelect(category)"
+      [class.bg-blue-500]="selectedCategory === category"
+      [class.text-white]="selectedCategory === category"
+      class="px-4 py-2 rounded-full border-2 border-blue-300 text-blue-500 hover:bg-blue-100 transition-colors font-medium flex items-center gap-2"
+    >
+      <span class="text-lg">{{ getCategoryEmoji(category) }}</span>
+      {{ category }}
     </button>
   </div>
 </div>

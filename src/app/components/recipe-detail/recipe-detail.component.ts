@@ -22,31 +22,26 @@ export class RecipeDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      const id = +params['id'];
-      this.loadRecipe(id);
-    });
-  }
-
-  private loadRecipe(id: number): void {
-    this.loading = true;
-    this.error = null;
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    if (isNaN(id)) {
+      this.error = 'Invalid recipe ID';
+      this.loading = false;
+      return;
+    }
 
     this.recipeService.getRecipeById(id).subscribe({
-      next: (recipe) => {
-        this.recipe = recipe;
+      next: (recipe: Recipe | undefined) => {
+        this.recipe = recipe || null;
         this.loading = false;
-        console.log('Recipe loaded successfully:', recipe);
       },
-      error: (error) => {
-        this.error = `Failed to load recipe: ${error.message}. Please try again later.`;
+      error: (error: Error) => {
+        this.error = `Failed to load recipe: ${error.message}`;
         this.loading = false;
-        console.error('Error loading recipe:', error);
       }
     });
   }
 
   goBack(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/recipes']);
   }
 }

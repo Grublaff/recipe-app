@@ -12,14 +12,16 @@ export class RecipeService {
 
   constructor(private http: HttpClient) {}
 
-  getRecipes(searchQuery?: string, category?: string): Observable<Recipe[]> {
+  getRecipes(searchQuery?: string, categories?: string[]): Observable<Recipe[]> {
     return this.http.get<{ recipes: Recipe[] }>(this.recipesUrl).pipe(
       map(response => {
         let recipes = response.recipes;
         
         // Apply category filter if provided
-        if (category) {
-          recipes = recipes.filter(recipe => recipe.categories.includes(category));
+        if (categories && categories.length > 0) {
+          recipes = recipes.filter(recipe => 
+            categories.some(category => recipe.categories.includes(category))
+          );
         }
         
         // Apply search filter if provided

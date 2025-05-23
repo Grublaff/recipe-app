@@ -25,8 +25,8 @@
         <button 
           *ngFor="let category of categories"
           (click)="onCategorySelect(category)"
-          [class.bg-blue-500]="selectedCategory === category"
-          [class.text-white]="selectedCategory === category"
+          [class.bg-blue-500]="isCategorySelected(category)"
+          [class.text-white]="isCategorySelected(category)"
           class="px-4 py-2 rounded-full border-2 border-blue-300 text-blue-500 hover:bg-blue-100 transition-colors font-medium flex items-center gap-2"
         >
           <span class="text-lg">{{ getCategoryEmoji(category) }}</span>

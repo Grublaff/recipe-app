@@ -27,54 +27,140 @@
     },
     {
       "id": 2,
-      "name": "Köttbullar med Potatismos",
-      "description": "Traditionella svenska köttbullar serverade med krämigt potatismos och lingonsylt.",
-      "cookingTime": 45,
+      "name": "Pizza Deg",
+      "description": "En kalljäst pizzadeg som ger ett krispigt och luftigt resultat.",
+      "cookingTime": 840,
       "ingredients": [
-        "500g blandfärs",
-        "1 gul lök",
-        "1 ägg",
-        "2 msk ströbröd",
-        "2 dl mjölk",
-        "1 tsk salt",
-        "1 krm svartpeppar",
-        "1 kg potatis",
-        "2 dl mjölk",
-        "50g smör"
+        "400g vatten",
+        "84g olja",
+        "2 tsk salt",
+        "2 tsk socker",
+        "480g mjöl",
+        "25g jäst"
       ],
       "instructions": [
-        "Blanda färs med finhackad lök, ägg, ströbröd och kryddor",
-        "Forma köttbullar",
-        "Stek köttbullarna gyllenbruna",
-        "Koka potatis",
-        "Mosa potatisen med mjölk och smör",
-        "Servera med lingonsylt"
+        "Blanda olja och kallt vatten i en bunke.",
+        "Rör i jästen tills den löst upp sig.",
+        "Arbeta i mjöl, salt och socker.",
+        "Kalljäs över natten.",
+        "Låt degen vila 15 min innan gräddning.",
+        "Grädda på 275°C i ca 10 minuter."
       ],
-      "imageUrl": "assets/images/meatballs.jpg"
+      "imageUrl": "assets/images/pizza-dough.jpg"
     },
     {
       "id": 3,
-      "name": "Äppelpaj",
-      "description": "En klassisk svensk äppelpaj med krispigt smuldeg och söta äpplen.",
-      "cookingTime": 50,
+      "name": "Formfranska",
+      "description": "Klassiskt vitt bröd bakat i form – luftigt, mjukt och perfekt till frukost.",
+      "cookingTime": 120,
       "ingredients": [
-        "1 kg äpplen",
-        "2 dl strösocker",
-        "2 tsk kanel",
-        "200g smör",
-        "3 dl vetemjöl",
-        "1 dl strösocker",
-        "1 ägg"
+        "780g mjöl",
+        "25g jäst",
+        "500g vatten",
+        "100g mjölk",
+        "36g honung",
+        "12g salt",
+        "1 ägg",
+        "Vallmo- eller sesamfrön"
       ],
       "instructions": [
-        "Skala och skiva äpplena",
-        "Blanda äpplena med socker och kanel",
-        "Gör smuldeg av smör, mjöl och socker",
-        "Lägg äpplena i en pajform",
-        "Fördela smuldegen över äpplena",
-        "Grädda i 175°C i 30-35 minuter"
+        "Smula jästen i en bunke och tillsätt ljummet vatten och mjölk.",
+        "Rör om tills jästen löst upp sig.",
+        "Tillsätt honung och salt, rör om.",
+        "Tillsätt mjöl i omgångar.",
+        "Dela degen i 2 delar på ett mjölat bakbord.",
+        "Lägg i två brödformar och jäs i 1 timme.",
+        "Sätt ugnen på 200°C.",
+        "Pensla med ägg och strö över frön.",
+        "Grädda i ca 30 minuter."
       ],
-      "imageUrl": "assets/images/apple-pie.jpg"
+      "imageUrl": "assets/images/placeholder.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Västkustsill",
+      "description": "En klassisk sillrätt med räkor och rom – perfekt till midsommar eller julbordet.",
+      "cookingTime": 20,
+      "ingredients": [
+        "0.5 dl majonnäs",
+        "1 dl creme fraiche",
+        "2 msk hackad dill",
+        "2 msk hackad gräslök",
+        "1 tsk citron",
+        "Salt och peppar",
+        "1 förpackning 5-minuterssill",
+        "75g skalade räkor",
+        "25g röd stenbitsrom"
+      ],
+      "instructions": [
+        "Blanda majonnäs, creme fraiche, dill och gräslök.",
+        "Smaka av med salt, peppar och citron.",
+        "Häll av sillen och skär i bitar.",
+        "Vänd ner sill, räkor och rom i blandningen.",
+        "Blanda försiktigt och ställ i kylen."
+      ],
+      "imageUrl": "assets/images/placeholder.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Laxpaj",
+      "description": "En smakrik paj med rökt lax, purjolök och ost.",
+      "cookingTime": 45,
+      "ingredients": [
+        "3 ägg",
+        "2.5 dl grädde",
+        "0.5 dl mjölk",
+        "Pajdeg",
+        "1 pkt rökt lax",
+        "1 st purjolök",
+        "Riven ost"
+      ],
+      "instructions": [
+        "Sätt ugnen på 225°C.",
+        "Förgrädda pajskalet i 5 minuter.",
+        "Stek hackad purjolök mjuk.",
+        "Blanda ägg, mjölk, grädde och purjolök.",
+        "Häll blandningen i pajskalet.",
+        "Lägg i lax och toppa med ost.",
+        "Grädda i 20–30 minuter."
+      ],
+      "imageUrl": "assets/images/placeholder.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Bullar",
+      "description": "Klassiska svenska bullar med socker, smör och pärlsocker.",
+      "cookingTime": 90,
+      "ingredients": [
+        "50g jäst",
+        "5 dl standardmjölk",
+        "0.5 tsk salt",
+        "1.5 dl strösocker",
+        "1 msk vaniljsocker",
+        "350g rumsvarmt smör",
+        "2 ägg",
+        "Ca 14 dl vetemjöl",
+        "1.5 dl strösocker (fyllning)",
+        "3 msk vaniljsocker (fyllning)",
+        "0.5 dl pärlsocker"
+      ],
+      "instructions": [
+        "Smula jästen i en bunke.",
+        "Värm mjölken till ca 37°C och häll över jästen, rör om.",
+        "Tillsätt salt, socker, vaniljsocker, smör, ägg och det mesta av mjölet.",
+        "Arbeta degen tills den blir blank och smidig.",
+        "Låt jäsa under bakduk i ca 30 minuter.",
+        "Sätt ugnen på 225°C (eller 200°C varmluft).",
+        "Blanda fyllningen.",
+        "Arbeta degen på ett lätt mjölat bord. Dela i två och kavla ut till rektanglar.",
+        "Bred ut fyllningen. Vik långsidorna mot varandra.",
+        "Skär i ca 2 cm breda remsor, tvinna och forma till knutar.",
+        "Lägg på bakplåtspapper och jäs i 30 minuter.",
+        "Pensla med uppvispat ägg, strö över pärlsocker.",
+        "Grädda i mitten av ugnen i 8–10 minuter.",
+        "Låt svalna på galler under bakduk."
+      ],
+      "imageUrl": "assets/images/placeholder.jpg"
     }
   ]
-} 
+}

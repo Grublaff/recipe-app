@@ -5,6 +5,7 @@
       "name": "Klassisk Chokladkaka",
       "description": "En rik och fuktig chokladkaka som är perfekt för alla tillfällen.",
       "cookingTime": 60,
+      "categories": ["Bakverk & Desserter"],
       "ingredients": [
         "200g mörk choklad",
         "200g smör",
@@ -30,6 +31,7 @@
       "name": "Pizza Deg",
       "description": "En kalljäst pizzadeg som ger ett krispigt och luftigt resultat.",
       "cookingTime": 840,
+      "categories": ["Bröd & Degar", "Middag"],
       "ingredients": [
         "400g vatten",
         "84g olja",
@@ -53,6 +55,7 @@
       "name": "Formfranska",
       "description": "Klassiskt vitt bröd bakat i form – luftigt, mjukt och perfekt till frukost.",
       "cookingTime": 120,
+      "categories": ["Bröd & Degar"],
       "ingredients": [
         "780g mjöl",
         "25g jäst",
@@ -81,6 +84,7 @@
       "name": "Västkustsill",
       "description": "En klassisk sillrätt med räkor och rom – perfekt till midsommar eller julbordet.",
       "cookingTime": 20,
+      "categories": ["Fisk & Skaldjur", "Middag"],
       "ingredients": [
         "0.5 dl majonnäs",
         "1 dl creme fraiche",
@@ -106,6 +110,7 @@
       "name": "Laxpaj",
       "description": "En smakrik paj med rökt lax, purjolök och ost.",
       "cookingTime": 45,
+      "categories": ["Fisk & Skaldjur", "Middag"],
       "ingredients": [
         "3 ägg",
         "2.5 dl grädde",
@@ -131,6 +136,7 @@
       "name": "Bullar",
       "description": "Klassiska svenska bullar med socker, smör och pärlsocker.",
       "cookingTime": 90,
+      "categories": ["Bakverk & Desserter", "Bröd & Degar"],
       "ingredients": [
         "50g jäst",
         "5 dl standardmjölk",

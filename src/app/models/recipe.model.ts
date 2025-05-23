@@ -3,7 +3,8 @@ export interface Recipe {
   name: string;
   description: string;
   cookingTime: number;
+  categories: string[];
   ingredients: string[];
   instructions: string[];
-  imageUrl?: string;
+  imageUrl: string;
 } 

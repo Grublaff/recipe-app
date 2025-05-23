@@ -3,20 +3,35 @@
     <h1 class="text-4xl font-bold mb-8 text-center">Recept</h1>
     
     <!-- Search Bar -->
-    <div class="mb-8">
-      <div class="relative">
+    <div class="max-w-4xl mx-auto mb-8">
+      <div class="flex gap-4 mb-6">
         <input 
           type="text" 
           [(ngModel)]="searchQuery" 
-          (input)="onSearch()"
-          placeholder="Sök recept..." 
-          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Search for recipes..."
+          (keyup.enter)="onSearch()"
+          class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-lg"
         >
-        <div class="absolute right-3 top-2.5 text-gray-400">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </div>
+        <button 
+          (click)="onSearch()"
+          class="px-8 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-lg font-medium"
+        >
+          Search
+        </button>
+      </div>
+
+      <!-- Category Filters -->
+      <div class="flex flex-wrap justify-center gap-3">
+        <button 
+          *ngFor="let category of categories"
+          (click)="onCategorySelect(category)"
+          [class.bg-blue-500]="selectedCategory === category"
+          [class.text-white]="selectedCategory === category"
+          class="px-4 py-2 rounded-full border-2 border-blue-300 text-blue-500 hover:bg-blue-100 transition-colors font-medium flex items-center gap-2"
+        >
+          <span class="text-lg">{{ getCategoryEmoji(category) }}</span>
+          {{ category }}
+        </button>
       </div>
     </div>
 
@@ -38,6 +53,16 @@
         <div class="p-6">
           <h2 class="text-xl font-semibold mb-2">{{ recipe.name }}</h2>
           <p class="text-gray-600 mb-4">{{ recipe.description }}</p>
+          
+          <!-- Recipe Categories -->
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span *ngFor="let category of recipe.categories" 
+                  class="px-2 py-1 text-sm rounded-full bg-blue-100 text-blue-600 flex items-center gap-1">
+              <span class="text-sm">{{ getCategoryEmoji(category) }}</span>
+              {{ category }}
+            </span>
+          </div>
+
           <div class="flex items-center text-sm text-gray-500">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />

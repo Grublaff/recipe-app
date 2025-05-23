@@ -1,57 +1,72 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError, map, shareReplay } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 import { Recipe } from '../models/recipe.model';
-
-interface RecipesResponse {
-  recipes: Recipe[];
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
   private recipesUrl = 'assets/recipes.json';
-  private recipesCache$: Observable<Recipe[]>;
 
-  constructor(private http: HttpClient) {
-    this.recipesCache$ = this.http.get<RecipesResponse>(this.recipesUrl).pipe(
+  constructor(private http: HttpClient) {}
+
+  getRecipes(searchQuery?: string, category?: string): Observable<Recipe[]> {
+    return this.http.get<{ recipes: Recipe[] }>(this.recipesUrl).pipe(
       map(response => {
-        console.log('Recipes response:', response);
-        return response.recipes || [];
+        let recipes = response.recipes;
+        
+        // Apply category filter if provided
+        if (category) {
+          recipes = recipes.filter(recipe => recipe.categories.includes(category));
+        }
+        
+        // Apply search filter if provided
+        if (searchQuery) {
+          const query = searchQuery.toLowerCase();
+          recipes = recipes.filter(recipe => 
+            recipe.name.toLowerCase().includes(query) ||
+            recipe.description.toLowerCase().includes(query) ||
+            recipe.ingredients.some(ingredient => 
+              ingredient.toLowerCase().includes(query)
+            )
+          );
+        }
+        
+        return recipes;
       }),
       catchError(error => {
-        console.error('Error loading recipes:', error);
+        console.error('Error fetching recipes:', error);
         return of([]);
-      }),
-      shareReplay(1)
-    );
-  }
-
-  getRecipes(): Observable<Recipe[]> {
-    return this.recipesCache$;
-  }
-
-  getRecipeById(id: number): Observable<Recipe | null> {
-    return this.recipesCache$.pipe(
-      map(recipes => {
-        console.log('Recipes in getRecipeById:', recipes);
-        const recipe = recipes.find(r => r.id === id);
-        return recipe || null;
       })
     );
   }
 
-  searchRecipes(query: string): Observable<Recipe[]> {
-    return this.recipesCache$.pipe(
-      map(recipes => {
-        const searchTerm = query.toLowerCase();
-        return recipes.filter(recipe => 
-          recipe.name.toLowerCase().includes(searchTerm) ||
-          recipe.description.toLowerCase().includes(searchTerm)
-        );
+  getRecipeById(id: number): Observable<Recipe | undefined> {
+    return this.http.get<{ recipes: Recipe[] }>(this.recipesUrl).pipe(
+      map(response => response.recipes.find(recipe => recipe.id === id)),
+      catchError(error => {
+        console.error('Error fetching recipe:', error);
+        return of(undefined);
       })
+    );
+  }
+
+  private filterByCategory(recipes: Recipe[], category: string): Recipe[] {
+    const categoryMap: { [key: string]: string[] } = {
+      'Bakverk & Desserter': ['chokladkaka', 'kaka', 'dessert'],
+      'Bröd & Degar': ['bröd', 'deg', 'pizza', 'bullar'],
+      'Fisk & Skaldjur': ['fisk', 'skaldjur', 'sill', 'lax'],
+      'Middag': ['paj', 'middag']
+    };
+
+    const keywords = categoryMap[category] || [];
+    return recipes.filter(recipe => 
+      keywords.some(keyword => 
+        recipe.name.toLowerCase().includes(keyword) ||
+        recipe.description.toLowerCase().includes(keyword)
+      )
     );
   }
 }

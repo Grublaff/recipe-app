@@ -574,6 +574,225 @@
       "Toppa med jordnötter och servera."
     ],
     "imageUrl": "assets/images/placeholder.jpg"
+  },
+      {
+    "id": 20,
+    "name": "Saffranslängd med vit choklad",
+    "description": "Mjuk saffranslängd fylld med vit choklad.",
+    "cookingTime": 90,
+    "categories": ["Bakverk", "Efterrätt"],
+    "ingredients": [
+      "200 g smör",
+      "5 dl mjölk",
+      "50 g jäst",
+      "1 g saffran",
+      "0.5 tsk salt",
+      "2 dl strösocker",
+      "13 dl vetemjöl",
+      "75 g smör",
+      "200 g vit choklad",
+      "0.5 dl strösocker",
+      "1 ägg",
+      "Pärlsocker"
+    ],
+    "instructions": [
+      "Smält smör och värm med mjölk till 37 grader.",
+      "Lös jästen i vätskan.",
+      "Tillsätt saffran, salt och socker.",
+      "Arbeta ner mjölet till smidig deg.",
+      "Jäs 30 minuter.",
+      "Dela degen i två delar.",
+      "Kavla ut och bred på smör.",
+      "Strö över choklad och socker.",
+      "Vik till längder.",
+      "Jäs 30 minuter.",
+      "Pensla med ägg och strö på pärlsocker.",
+      "Grädda i 175 grader i 25 till 30 minuter."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Cornbread",
+    "description": "Saftigt majsbröd bakat i ugn.",
+    "cookingTime": 40,
+    "categories": ["Bakverk"],
+    "ingredients": [
+      "125 g smör",
+      "1.5 dl socker",
+      "2 ägg",
+      "2.5 dl lättfil",
+      "1 tsk bakpulver",
+      "2.5 dl vetemjöl",
+      "2.5 dl majsmjöl",
+      "1 tsk salt"
+    ],
+    "instructions": [
+      "Sätt ugnen på 175 grader.",
+      "Smält smöret och blanda med socker.",
+      "Vispa ner äggen.",
+      "Blanda i bakpulver och fil.",
+      "Tillsätt mjöl, majsmjöl och salt.",
+      "Häll smeten i smord form.",
+      "Baka 30 till 40 minuter.",
+      "Skär i rutor före servering."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Pannacotta",
+    "description": "Klassisk pannacotta med vanilj.",
+    "cookingTime": 15,
+    "categories": ["Efterrätt"],
+    "ingredients": [
+      "2 gelatinblad",
+      "5 dl grädde",
+      "1 vaniljstång",
+      "0.5 dl strösocker",
+      "Färska bär"
+    ],
+    "instructions": [
+      "Lägg gelatin i kallt vatten.",
+      "Koka upp grädde med vanilj och socker.",
+      "Sjud i 2 minuter.",
+      "Ta upp vaniljstången.",
+      "Rör ner gelatin.",
+      "Häll upp i formar.",
+      "Kyl minst 5 timmar.",
+      "Servera med bär."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Morotssoppa med kokos",
+    "description": "Len morotssoppa med kokosmjölk och lime.",
+    "cookingTime": 25,
+    "categories": ["Vegetariskt", "Soppa"],
+    "ingredients": [
+      "2 msk olivolja",
+      "1 gul lök",
+      "2 vitlöksklyftor",
+      "500 g morötter",
+      "1 tsk spiskummin",
+      "1 till 2 msk riven ingefära",
+      "1 krm chiliflakes",
+      "400 ml kokosmjölk",
+      "2 msk grönsaksfond",
+      "6 dl vatten",
+      "1 msk limejuice",
+      "0.5 tsk salt",
+      "Pumpakärnor"
+    ],
+    "instructions": [
+      "Fräs lök, vitlök och kryddor i olja.",
+      "Tillsätt morötter och fräs vidare.",
+      "Häll i kokosmjölk, fond och vatten.",
+      "Sjud 15 till 20 minuter.",
+      "Mixa soppan slät.",
+      "Smaka av med lime och salt.",
+      "Toppa med kokosmjölk och pumpakärnor."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Köttbullar i ljus gräddsås",
+    "description": "Klassiska köttbullar med krämig gräddsås.",
+    "cookingTime": 30,
+    "categories": ["Kött", "Middag"],
+    "ingredients": [
+      "1 dl havregryn",
+      "0.75 dl mjölk",
+      "2 msk potatismjöl",
+      "0.5 gul lök",
+      "1 ägg",
+      "500 g blandfärs",
+      "1 tsk salt",
+      "2 krm peppar",
+      "1 msk smör",
+      "2 dl vatten",
+      "2 msk kalvfond",
+      "2 dl vispgrädde",
+      "2 msk vetemjöl"
+    ],
+    "instructions": [
+      "Blanda havregryn, mjölk och potatismjöl.",
+      "Låt svälla 5 minuter.",
+      "Stek löken mjuk.",
+      "Blanda alla ingredienser till färs.",
+      "Forma köttbullar.",
+      "Stek i smör.",
+      "Koka upp såsingredienser.",
+      "Sjud några minuter.",
+      "Servera köttbullar med sås."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Panerad fisk med pommes",
+    "description": "Panerad torsk med pommes och yoghurtsås.",
+    "cookingTime": 30,
+    "categories": ["Fisk", "Middag"],
+    "ingredients": [
+      "2 torskfiléer",
+      "Salt",
+      "Svartpeppar",
+      "Vetemjöl",
+      "1 ägg",
+      "Ströbröd",
+      "Smör",
+      "300 g pommes",
+      "2 dl gröna ärter",
+      "2 dl grekisk yoghurt",
+      "2 vitlöksklyftor",
+      "1 citron",
+      "1 tsk vinäger"
+    ],
+    "instructions": [
+      "Tillaga pommes i ugn.",
+      "Rosta vitlök i ugnen.",
+      "Blanda yoghurt med vitlök och citron.",
+      "Koka ärtor kort.",
+      "Panera fisken i mjöl, ägg och ströbröd.",
+      "Stek fisken i smör.",
+      "Servera med pommes och sås."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Kikärtsgryta",
+    "description": "Snabb vegetarisk gryta med kokosmjölk och lime.",
+    "cookingTime": 20,
+    "categories": ["Vegetariskt", "Middag"],
+    "ingredients": [
+      "1 gul lök",
+      "2 vitlöksklyftor",
+      "0.5 msk socker",
+      "2 tsk gurkmeja",
+      "0.5 tsk kajennpeppar",
+      "2 msk rapsolja",
+      "400 ml kokosmjölk",
+      "1 lime",
+      "4 tomater",
+      "1 burk kikärtor",
+      "140 g bladspenat",
+      "1 tsk salt"
+    ],
+    "instructions": [
+      "Stek lök, vitlök och kryddor i olja.",
+      "Tillsätt kokosmjölk, salt och limeskal.",
+      "Koka kraftigt 5 minuter.",
+      "Tillsätt tomater och kikärtor.",
+      "Rör ner spenat i omgångar.",
+      "Pressa i lime.",
+      "Koka någon minut till.",
+      "Servera varm."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
   }
   ]
 }

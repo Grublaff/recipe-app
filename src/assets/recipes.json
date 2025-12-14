@@ -167,6 +167,202 @@
         "Låt svalna på galler under bakduk."
       ],
       "imageUrl": "assets/images/placeholder.jpg"
-    }
+    },
+      {
+    "id": 7,
+    "name": "Fläskkotletter i gräddsås",
+    "description": "Fläskkotletter i krämig gräddsås med potatis och grönsaker.",
+    "cookingTime": 30,
+    "categories": ["Kött", "Middag"],
+    "ingredients": [
+      "1 kg potatis",
+      "250 g broccoli",
+      "250 g morötter",
+      "1 msk smör",
+      "600 g fläskkotlett",
+      "1 tsk salt",
+      "0.5 tsk grovmalen svartpeppar",
+      "1.5 dl vispgrädde"
+    ],
+    "instructions": [
+      "Koka potatis i lättsaltat vatten.",
+      "Skär broccoli i buketter och morötter i slantar.",
+      "Koka broccoli och morötter i 3 minuter.",
+      "Hetta upp smör i en stekpanna.",
+      "Stek kotletterna tills de fått färg på båda sidor.",
+      "Salta och peppra.",
+      "Häll i grädde och låt sjuda tills köttet är genomstekt.",
+      "Smaka av med salt och peppar.",
+      "Servera med potatis och grönsaker."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Chorizostroganoff",
+    "description": "Snabb stroganoff med chorizo, ris och gröna ärtor.",
+    "cookingTime": 20,
+    "categories": ["Korv", "Middag"],
+    "ingredients": [
+      "3 dl ris",
+      "1 gul lök",
+      "Smör",
+      "400 g chorizo",
+      "1 msk tomatpuré",
+      "3 dl vispgrädde",
+      "2 krm torkad timjan",
+      "0.5 tsk salt",
+      "Grovmalen svartpeppar",
+      "250 g gröna ärtor",
+      "0.5 dl hackad persilja"
+    ],
+    "instructions": [
+      "Koka ris enligt anvisning.",
+      "Stek hackad lök i smör tills glansig.",
+      "Tillsätt chorizo och stek några minuter.",
+      "Rör ner tomatpuré och stek 2–3 minuter.",
+      "Häll i grädde, timjan och salt.",
+      "Låt koka ihop 2–3 minuter.",
+      "Smaka av med peppar.",
+      "Koka upp vatten och sjud ärtor i 2 minuter.",
+      "Servera stroganoff med ris och ärtor.",
+      "Toppa med persilja."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Allt på en plåt med kyckling",
+    "description": "Ugnsrostad kyckling med potatis, grönsaker och zucchinitzatziki.",
+    "cookingTime": 30,
+    "categories": ["Kyckling", "Middag"],
+    "ingredients": [
+      "4 kycklingfiléer",
+      "1 msk kinesisk soja",
+      "1 msk vitlökspulver",
+      "2 msk olivolja",
+      "1 rödlök",
+      "3 morötter",
+      "250 g broccoli",
+      "2 msk finhackad färsk timjan",
+      "1 vitlöksklyfta",
+      "500 g potatis",
+      "2 tsk flingsalt",
+      "0.5 zucchini",
+      "3 dl yoghurt 10%",
+      "1 vitlöksklyfta",
+      "Salt",
+      "Svartpeppar"
+    ],
+    "instructions": [
+      "Sätt ugnen på 200 grader.",
+      "Blanda kycklingen med soja, vitlökspulver och olivolja.",
+      "Lägg kycklingen på en plåt med bakplåtspapper.",
+      "Skär lök, morötter och broccoli.",
+      "Blanda grönsakerna med olja, timjan och riven vitlök.",
+      "Lägg grönsakerna bredvid kycklingen.",
+      "Skär potatis i klyftor och vänd i olja.",
+      "Lägg potatisen på plåten med snittytan nedåt.",
+      "Salta allt och rosta i ugnen ca 30 minuter.",
+      "Riv zucchinin och blanda med yoghurt.",
+      "Smaka av med vitlök, salt och peppar.",
+      "Servera med zucchinitzatziki."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Kycklingfajitas",
+    "description": "Kryddig kyckling i tortillas med sallad och guacamole.",
+    "cookingTime": 20,
+    "categories": ["Kyckling", "Middag"],
+    "ingredients": [
+      "550 g kycklingfilé",
+      "1 lök",
+      "1 röd paprika",
+      "1 msk olja",
+      "1 påse fajita kryddmix",
+      "8 tortillabröd",
+      "8 salladsblad",
+      "Guacamole",
+      "1 lime",
+      "Färsk koriander"
+    ],
+    "instructions": [
+      "Strimla kyckling, lök och paprika.",
+      "Stek kycklingen i het panna tills gyllenbrun.",
+      "Tillsätt lök och paprika.",
+      "Blanda ner kryddmix och sänk värmen.",
+      "Stek i cirka 3 minuter.",
+      "Värm tortillabröden.",
+      "Lägg salladsblad på tortillas.",
+      "Fördela kycklingblandningen ovanpå.",
+      "Toppa med guacamole.",
+      "Garnera med lime och koriander.",
+      "Servera direkt."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Kycklingtacos",
+    "description": "Tacos med kryddad kyckling och klassiska tillbehör.",
+    "cookingTime": 15,
+    "categories": ["Kyckling", "Middag"],
+    "ingredients": [
+      "500 g kycklingfärs eller kycklingfilé",
+      "1 msk smör eller olja",
+      "1 påse kryddmix till kycklingtaco",
+      "1 dl vatten",
+      "12 tacoskal",
+      "Romansallad",
+      "3 tomater",
+      "1–2 dl riven ost",
+      "2–3 avokado",
+      "1 burk salsa"
+    ],
+    "instructions": [
+      "Stek kycklingen i smör eller olja.",
+      "Tillsätt kryddmix och vatten.",
+      "Rör om och låt koka utan lock i 5 minuter.",
+      "Hacka kycklingen fint om filé används.",
+      "Värm tacoskalen.",
+      "Fyll skalen med kyckling och tillbehör.",
+      "Toppa med salsa."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Korvstroganoff med ris",
+    "description": "Klassisk stroganoff med korv i tomat- och gräddsås.",
+    "cookingTime": 20,
+    "categories": ["Korv", "Middag"],
+    "ingredients": [
+      "4 portioner ris",
+      "550 g falukorv eller kycklingkorv",
+      "1 gul lök",
+      "1 msk olja",
+      "3 msk tomatpuré",
+      "2.5 dl matlagningsgrädde",
+      "1 dl mjölk",
+      "1 msk japansk soja",
+      "1 tsk dijonsenap",
+      "Salt",
+      "Peppar"
+    ],
+    "instructions": [
+      "Koka ris enligt anvisning.",
+      "Skär korven i stavar.",
+      "Hacka löken.",
+      "Stek korv och lök i olja ca 5 minuter.",
+      "Tillsätt tomatpuré och fräs kort.",
+      "Rör ner grädde, mjölk, soja och dijonsenap.",
+      "Låt sjuda ca 5 minuter.",
+      "Smaka av med salt och peppar.",
+      "Servera med ris."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  }
   ]
 }

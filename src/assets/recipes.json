@@ -363,6 +363,217 @@
       "Servera med ris."
     ],
     "imageUrl": "assets/images/placeholder.jpg"
+  },
+    {
+    "id": 13,
+    "name": "Renskavsgryta",
+    "description": "Krämig gryta på renskav med svamp och lök.",
+    "cookingTime": 30,
+    "categories": ["Vilt", "Middag"],
+    "ingredients": [
+      "480 g fryst renskav",
+      "250 g champinjoner",
+      "1 gul lök",
+      "1 vitlöksklyfta",
+      "Smör",
+      "3 dl grädde",
+      "3 dl mjölk",
+      "1 tsk kinesisk soja",
+      "0.5 msk ljus redning",
+      "800 g potatis",
+      "1 tsk salt",
+      "0.5 tsk svartpeppar",
+      "Rårörda lingon"
+    ],
+    "instructions": [
+      "Koka potatis i saltat vatten.",
+      "Skär svamp i bitar och lök i strimlor.",
+      "Stek renskaven i smör på hög värme.",
+      "Lägg köttet åt sidan.",
+      "Stek svamp och lök tills mjuka.",
+      "Lägg tillbaka köttet.",
+      "Pressa i vitlök och krydda.",
+      "Häll i grädde och mjölk.",
+      "Låt småkoka 5 minuter.",
+      "Tillsätt soja och redning.",
+      "Servera med potatis och lingon."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Kyckling i krämig currysås",
+    "description": "Kycklinggryta med curry, blomkål och mango chutney.",
+    "cookingTime": 25,
+    "categories": ["Kyckling", "Middag"],
+    "ingredients": [
+      "4 dl ris",
+      "500 g kycklingfilé",
+      "1 msk olivolja",
+      "1 gul lök",
+      "0.5 blomkål",
+      "1 tsk curry",
+      "2 dl grädde",
+      "1 dl vatten",
+      "0.5 dl mango chutney"
+    ],
+    "instructions": [
+      "Koka ris enligt anvisning.",
+      "Stek kycklingen i olja tills gyllenbrun.",
+      "Tillsätt lök och blomkål.",
+      "Stek i 2 minuter.",
+      "Tillsätt curry, grädde, vatten och chutney.",
+      "Låt sjuda cirka 8 minuter.",
+      "Servera med ris."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Tacolåda",
+    "description": "Ugnsbakad tacogryta med tortilla och ost.",
+    "cookingTime": 30,
+    "categories": ["Tacorätter", "Middag"],
+    "ingredients": [
+      "500 g färs",
+      "1 msk olja",
+      "1 röd paprika",
+      "150 g majs",
+      "1 påse taco kryddmix",
+      "390 g passerade tomater",
+      "2 dl crème fraiche paprika chili",
+      "8 små tortillabröd",
+      "1.5 dl riven ost",
+      "Sallad"
+    ],
+    "instructions": [
+      "Sätt ugnen på 225 grader.",
+      "Stek färsen i olja.",
+      "Tillsätt paprika och majs.",
+      "Stek tills färsen är klar.",
+      "Tillsätt kryddmix och tomater.",
+      "Rör ner crème fraiche.",
+      "Varva sås och tortillabröd i form.",
+      "Toppa med ost.",
+      "Grädda 10 till 15 minuter."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Falukorv i ugn",
+    "description": "Ugnsbakad falukorv med senap och ketchup.",
+    "cookingTime": 20,
+    "categories": ["Korv", "Middag"],
+    "ingredients": [
+      "500 g falukorv",
+      "1 dl ketchup",
+      "1 dl senap",
+      "1 kg potatis",
+      "2.25 dl mjölk",
+      "50 g smör",
+      "0.75 tsk salt",
+      "2 krm vitpeppar",
+      "1 krm socker"
+    ],
+    "instructions": [
+      "Sätt ugnen på 200 grader.",
+      "Skär skåror i korven.",
+      "Fyll med ketchup och bred senap ovanpå.",
+      "Grädda i 20 minuter.",
+      "Koka potatis mjuk.",
+      "Mosa potatis med smör och mjölk.",
+      "Smaka av med kryddor.",
+      "Servera med korven."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Fiskpinneburgare",
+    "description": "Fiskpinnar i bröd med örtsås.",
+    "cookingTime": 15,
+    "categories": ["Fisk", "Middag"],
+    "ingredients": [
+      "450 g fiskpinnar",
+      "1 msk smör",
+      "4 hamburgerbröd",
+      "2 till 3 tomater",
+      "65 g salladsmix",
+      "2 dl crème fraiche",
+      "3 msk frysta örter",
+      "Salt",
+      "Svartpeppar"
+    ],
+    "instructions": [
+      "Blanda crème fraiche och örter.",
+      "Smaka av med salt och peppar.",
+      "Stek fiskpinnarna i smör.",
+      "Skiva tomater.",
+      "Servera fiskpinnarna i bröd med sås och grönsaker."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Snabb chili con carne",
+    "description": "Enkel chili med färs, bönor och majs.",
+    "cookingTime": 20,
+    "categories": ["Kött", "Middag"],
+    "ingredients": [
+      "4 portioner ris",
+      "500 g blandfärs",
+      "1 msk olja",
+      "2 msk tomatpuré",
+      "1 till 2 krm chilipulver",
+      "2 förpackningar vita bönor i tomatsås",
+      "340 g majs",
+      "0.5 dl vatten",
+      "Salt",
+      "Peppar"
+    ],
+    "instructions": [
+      "Koka ris enligt anvisning.",
+      "Stek färsen i olja.",
+      "Tillsätt tomatpuré och kryddor.",
+      "Rör ner bönor, majs och vatten.",
+      "Låt sjuda 5 till 10 minuter.",
+      "Smaka av.",
+      "Servera med ris."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Flygande Jacob",
+    "description": "Ugnsrätt med kyckling, banan och chilisås.",
+    "cookingTime": 30,
+    "categories": ["Kyckling", "Middag"],
+    "ingredients": [
+      "4 kycklingfiléer",
+      "1 tsk olja",
+      "140 g bacon",
+      "1 banan",
+      "2.5 dl matlagningsgrädde",
+      "1 dl chilisås",
+      "4 portioner ris",
+      "1 dl saltade jordnötter",
+      "Salt",
+      "Peppar"
+    ],
+    "instructions": [
+      "Sätt ugnen på 225 grader.",
+      "Stek kycklingen och krydda.",
+      "Lägg i ugnsform.",
+      "Stek bacon och lägg ovanpå.",
+      "Skiva banan och lägg över.",
+      "Blanda grädde och chilisås.",
+      "Häll såsen över.",
+      "Tillaga i ugnen cirka 20 minuter.",
+      "Koka ris.",
+      "Toppa med jordnötter och servera."
+    ],
+    "imageUrl": "assets/images/placeholder.jpg"
   }
   ]
 }

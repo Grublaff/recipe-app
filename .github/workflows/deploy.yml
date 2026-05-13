@@ -13,6 +13,6 @@ jobs:
     with:
       image-name: recipe-app
       site-type: static
-      build-command: npm run build
+      build-command: npm run build -- --base-href=/
       build-output: dist/recipe-app/browser
     secrets: inherit

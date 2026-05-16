@@ -1,1 +1,9 @@
+<header class="topbar">
+  <a class="topbar__brand" href="#" (click)="goHome($event)">
+    <img src="assets/brand/alburg-logomark.svg" alt="" />
+    <span class="name">Alburg</span>
+    <span class="slash">/</span>
+    <span class="here">{{ breadcrumb.current() }}</span>
+  </a>
+</header>
 <router-outlet></router-outlet>

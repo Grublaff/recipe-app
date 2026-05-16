@@ -1,79 +1,83 @@
-<div class="container mx-auto px-4 py-8">
-  <div class="max-w-4xl mx-auto">
-    <!-- Back Button -->
-    <button 
-      (click)="goBack()" 
-      class="mb-6 flex items-center text-blue-600 hover:text-blue-800"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-      </svg>
-      Tillbaka till recept
-    </button>
+<div class="detail" *ngIf="!loading && !error && recipe">
+  <button class="backlink fade-in" (click)="goBack()">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5"/>
+      <path d="m11 18-6-6 6-6"/>
+    </svg>
+    Tillbaka till recept
+  </button>
 
-    <!-- Loading State -->
-    <div *ngIf="loading" class="text-center py-8">
-      <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-500 border-t-transparent"></div>
-      <p class="mt-2 text-gray-600">Laddar recept...</p>
+  <header class="detail__head fade-in" style="animation-delay: 40ms">
+    <div class="detail__cats">
+      <span class="tag" *ngFor="let c of recipe.categories" [style.--cat-color]="categoryColor(c)">
+        <span class="dot"></span>
+        {{ c }}
+      </span>
     </div>
-
-    <!-- Error State -->
-    <div *ngIf="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
-      <strong class="font-bold">Fel!</strong>
-      <span class="block sm:inline"> {{ error }}</span>
-    </div>
-
-    <!-- Recipe Details -->
-    <div *ngIf="recipe && !loading && !error" class="bg-white rounded-lg shadow-lg overflow-hidden">
-      <!-- Recipe Image -->
-      <div class="relative h-64 bg-gray-200">
-        <img 
-          [src]="recipe.imageUrl || 'assets/images/placeholder.jpg'" 
-          [alt]="recipe.name"
-          class="w-full h-full object-cover"
-        >
+    <h1 class="detail__title">{{ recipe.name }}</h1>
+    <p class="detail__lead">{{ recipe.description }}</p>
+    <div class="detail__meta">
+      <div class="meta-item">
+        <span class="label">Tid</span>
+        <span class="value">{{ formatTime(recipe.cookingTime) }}</span>
       </div>
-
-      <!-- Recipe Content -->
-      <div class="p-6">
-        <h1 class="text-3xl font-bold text-gray-800 mb-4">{{ recipe.name }}</h1>
-        <p class="text-gray-600 mb-6">{{ recipe.description }}</p>
-
-        <!-- Recipe Info -->
-        <div class="flex flex-wrap gap-4 mb-6">
-          <div class="flex items-center text-gray-600">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>{{ recipe.cookingTime }} minuter</span>
-          </div>
-        </div>
-
-        <!-- Ingredients -->
-        <div class="mb-8">
-          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Ingredienser</h2>
-          <ul class="list-disc list-inside space-y-2">
-            <li *ngFor="let ingredient of recipe.ingredients" class="text-gray-600">
-              {{ ingredient }}
-            </li>
-          </ul>
-        </div>
-
-        <!-- Instructions -->
-        <div>
-          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Instruktioner</h2>
-          <ol class="list-decimal list-inside space-y-4">
-            <li *ngFor="let instruction of recipe.instructions" class="text-gray-600">
-              {{ instruction }}
-            </li>
-          </ol>
-        </div>
+      <div class="meta-item" *ngIf="recipe.servings">
+        <span class="label">Portioner</span>
+        <span class="value">{{ recipe.servings }}</span>
+      </div>
+      <div class="meta-item" *ngIf="recipe.difficulty">
+        <span class="label">Svårighet</span>
+        <span class="value">{{ recipe.difficulty }}</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Ingredienser</span>
+        <span class="value">{{ recipe.ingredients.length }} st</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Steg</span>
+        <span class="value">{{ recipe.instructions.length }} st</span>
       </div>
     </div>
+  </header>
 
-    <!-- Fallback Message -->
-    <div *ngIf="!loading && !error && !recipe" class="text-center py-8">
-      <p class="text-gray-600">Inget recept hittades.</p>
-    </div>
+  <div class="detail__body fade-in" style="animation-delay: 100ms">
+    <aside>
+      <h2 class="section-title">Ingredienser</h2>
+      <ul class="ingredients">
+        <li *ngFor="let ing of parsedIngredients">
+          <span class="name">{{ ing.name }}</span>
+          <span class="qty" *ngIf="ing.qty">{{ ing.qty }}</span>
+        </li>
+      </ul>
+    </aside>
+    <section>
+      <h2 class="section-title">Instruktioner</h2>
+      <ol class="instructions">
+        <li *ngFor="let step of recipe.instructions">
+          <span class="step-text">{{ step }}</span>
+        </li>
+      </ol>
+    </section>
   </div>
+
+  <footer class="detail__footer">
+    <span>Sparat i Mitt kök</span>
+    <button class="backlink" (click)="goBack()">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5"/>
+        <path d="m11 18-6-6 6-6"/>
+      </svg>
+      Alla recept
+    </button>
+  </footer>
+</div>
+
+<div class="detail" *ngIf="loading">
+  <div class="state">Laddar recept…</div>
+</div>
+<div class="detail" *ngIf="error">
+  <div class="state error">{{ error }}</div>
+</div>
+<div class="detail" *ngIf="!loading && !error && !recipe">
+  <div class="state">Inget recept hittades.</div>
 </div>

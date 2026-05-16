@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-label="Alburg">
+  
+  <circle cx="44" cy="22" r="10" fill="#FAA000"></circle>
+  <g fill="#FAF7F0">
+    <path d="M18 10 L15 20 L17 20 L12 30 L17 30 L9 42 L27 42 L19 30 L24 30 L19 20 L21 20 Z"></path>
+    <rect x="17" y="42" width="2" height="4"></rect>
+  </g>
+  <path d="M4 48 H60" stroke="#FAA000" stroke-width="3" stroke-linecap="round"></path>
+</svg>

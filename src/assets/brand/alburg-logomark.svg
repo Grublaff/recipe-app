@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-label="Alburg">
+  
+  <rect width="64" height="64" rx="14" fill="#0E1116"></rect>
+
+  
+  <circle cx="46" cy="24" r="7.5" fill="#FAA000"></circle>
+
+  
+  <g fill="#FAF7F0">
+    <path d="M20 12 L17 20 L19 20 L15 28 L19 28 L13 38 L27 38 L21 28 L25 28 L21 20 L23 20 Z"></path>
+    <rect x="19" y="38" width="2" height="4"></rect>
+  </g>
+
+  
+  <path d="M6 44 H58" stroke="#FAA000" stroke-width="2.5" stroke-linecap="round"></path>
+
+  
+  <path d="M16 44 L20 52 L24 44 Z" fill="#FAF7F0" opacity="0.18"></path>
+
+  
+  <g stroke="#FAA000" stroke-width="1.5" stroke-linecap="round" opacity="0.55">
+    <line x1="40" y1="50" x2="52" y2="50"></line>
+    <line x1="42" y1="55" x2="50" y2="55"></line>
+  </g>
+</svg>

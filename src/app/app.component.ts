@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
+import { BreadcrumbService } from './services/breadcrumb.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,12 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'recipe-app';
+  private router = inject(Router);
+  breadcrumb = inject(BreadcrumbService);
+
+  goHome(event: Event) {
+    event.preventDefault();
+    this.breadcrumb.reset();
+    this.router.navigate(['/']);
+  }
 }

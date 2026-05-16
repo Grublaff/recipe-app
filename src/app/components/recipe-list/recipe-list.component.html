@@ -1,87 +1,91 @@
-<div class="container mx-auto px-4 py-8">
-  <div class="max-w-4xl mx-auto">
-    <h1 class="text-4xl font-bold mb-8 text-center">Recept</h1>
-    
-    <!-- Search Bar -->
-    <div class="max-w-4xl mx-auto mb-8">
-      <div class="flex gap-4 mb-6">
-        <input 
-          type="text" 
-          [(ngModel)]="searchQuery" 
-          placeholder="Search for recipes..."
-          (keyup.enter)="onSearch()"
-          class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors text-lg"
-        >
-        <button 
-          (click)="onSearch()"
-          class="px-8 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-lg font-medium"
-        >
-          Search
-        </button>
-      </div>
+<div class="page">
+  <div class="page__head fade-in">
+    <div class="h-left">
+      <span class="eyebrow">Mitt kök · {{ allRecipes.length }} recept</span>
+      <h1 class="page__title">Recept</h1>
+    </div>
+    <span class="page__count">{{ recipes.length }} / {{ allRecipes.length }}</span>
+  </div>
 
-      <!-- Category Filters -->
-      <div class="flex flex-wrap justify-center gap-3">
-        <button 
-          *ngFor="let category of categories"
-          (click)="onCategorySelect(category)"
-          [class.bg-blue-500]="isCategorySelected(category)"
-          [class.text-white]="isCategorySelected(category)"
-          class="px-4 py-2 rounded-full border-2 border-blue-300 text-blue-500 hover:bg-blue-100 transition-colors font-medium flex items-center gap-2"
-        >
-          <span class="text-lg">{{ getCategoryEmoji(category) }}</span>
-          {{ category }}
-        </button>
-      </div>
+  <div class="controls fade-in" style="animation-delay: 60ms">
+    <div class="search">
+      <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="7"/>
+        <path d="m20 20-3.5-3.5"/>
+      </svg>
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        (ngModelChange)="onSearch()"
+        placeholder="Sök recept, ingredienser, tillfällen…"
+      />
+      <span class="kbd">⌘ K</span>
     </div>
 
-    <!-- Loading State -->
-    <div *ngIf="loading" class="text-center py-8">
-      <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-500 border-t-transparent"></div>
-      <p class="mt-2 text-gray-600">Laddar recept...</p>
-    </div>
-
-    <!-- Error State -->
-    <div *ngIf="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
-      <strong class="font-bold">Fel!</strong>
-      <span class="block sm:inline"> {{ error }}</span>
-    </div>
-
-    <!-- Recipe List -->
-    <div *ngIf="!loading && !error" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div *ngFor="let recipe of recipes" class="bg-white rounded-2xl shadow-2xl border border-gray-200 hover:shadow-3xl hover:border-blue-400 transition-all duration-300 overflow-hidden">
-        <div class="p-6">
-          <h2 class="text-xl font-semibold mb-2">{{ recipe.name }}</h2>
-          <p class="text-gray-600 mb-4">{{ recipe.description }}</p>
-          
-          <!-- Recipe Categories -->
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span *ngFor="let category of recipe.categories" 
-                  class="px-2 py-1 text-sm rounded-full bg-blue-100 text-blue-600 flex items-center gap-1">
-              <span class="text-sm">{{ getCategoryEmoji(category) }}</span>
-              {{ category }}
-            </span>
-          </div>
-
-          <div class="flex items-center text-sm text-gray-500">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>{{ recipe.cookingTime }} minuter</span>
-          </div>
-          <a
-            [routerLink]="['/recipe', recipe.id]"
-            class="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition"
-          >
-            Visa recept
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- No Results -->
-    <div *ngIf="!loading && !error && recipes.length === 0" class="text-center py-8">
-      <p class="text-gray-600">Inga recept hittades.</p>
+    <div class="chips" *ngIf="categories.length">
+      <span class="group-label">Kategori</span>
+      <button
+        *ngFor="let category of categories"
+        type="button"
+        class="chip"
+        [class.active]="isCategorySelected(category)"
+        [style.--cat-color]="categoryColor(category)"
+        (click)="toggleCategory(category)"
+      >
+        <span class="dot"></span>
+        {{ category }}
+      </button>
+      <button *ngIf="selectedCategories.length" type="button" class="chip clear" (click)="clearCategories()">
+        Rensa
+      </button>
     </div>
   </div>
+
+  <div *ngIf="loading" class="state">Laddar recept…</div>
+  <div *ngIf="error" class="state error">{{ error }}</div>
+
+  <ng-container *ngIf="!loading && !error">
+    <div *ngIf="recipes.length === 0" class="empty">
+      <div class="big">Inga recept matchade.</div>
+      <div>Prova en annan sökning eller rensa filtren.</div>
+    </div>
+
+    <div *ngIf="recipes.length" class="grid">
+      <button
+        *ngFor="let recipe of recipes; let i = index; trackBy: trackById"
+        type="button"
+        class="card fade-in"
+        [style.animation-delay.ms]="80 + i * 30"
+        (click)="viewRecipe(recipe.id)"
+      >
+        <span class="card__num">{{ cardNumber(i) }}</span>
+        <h2 class="card__title">{{ recipe.name }}</h2>
+        <p class="card__desc">{{ recipe.description }}</p>
+        <div class="card__meta">
+          <div class="card__cats">
+            <span class="tag" *ngFor="let c of recipe.categories" [style.--cat-color]="categoryColor(c)">
+              <span class="dot"></span>
+              {{ c }}
+            </span>
+          </div>
+          <div class="card__bottom">
+            <span class="time">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 2"/>
+              </svg>
+              {{ formatTime(recipe.cookingTime) }}
+            </span>
+            <span class="card__cta">
+              Visa recept
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/>
+                <path d="m13 6 6 6-6 6"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </ng-container>
 </div>
